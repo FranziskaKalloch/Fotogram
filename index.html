@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotogram</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!---------    Wenn der Body geladen wird, dann greift die Funktion init(); Dafür ist das Attribut onload wichitg. Das ist der Start  ------------>
+  <body onload="init()">
+    <!---------        HEADER   ------------>
+    <header class="header-top">
+      <div class="header-logo-container">
+        <img
+          class="header-logo"
+          src="assets/img/logo/logo.png"
+          alt="logo twelfe month romy"
+        />
+      </div>
+    </header>
+
+    <!---------        MAIN   ------------>
+    <main class="main-container">
+      <div>
+        <h1>Romy's personal photo album</h1>
+      </div>
+
+      <!---------        IMAGE CONTAINER  ------------>
+      <div
+        id="img-container"
+        aria-haspopup="dialog"
+        aria-controls="imgDialog"
+      ></div>
+
+      <!---------        DIALOG   ------------>
+      <dialog
+        id="imgDialog"
+        class="dialog"
+        tabindex="-1"
+        aria-labelledby="fileName"
+      >
+        <header id="dialogHeader">
+          <h2 id="fileName"></h2>
+          <button onclick="closeDialog()" aria-label="close Dialog">
+            <img
+              class="close-btn"
+              src="assets/icons/icons8-fenster-schließen-100.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+        </header>
+        <section id="dialogPicture"></section>
+        <footer class="dialog-footer">
+          <button
+            id="dialogArrowLeft"
+            onclick="prevImage()"
+            aria-label="previous picture"
+          >
+            <img
+              class="arrow-left"
+              src="assets/icons/icons8-pfeil-64.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+          <span id="counter" aria-live="polite" aria-atomic="true"></span>
+          <button
+            id="dialogArrowRight"
+            onclick="nextImage()"
+            aria-label="next picture"
+          >
+            <img class="arrow-right" src="assets/icons/icons8-pfeil-64.png" />
+          </button>
+        </footer>
+      </dialog>
+      <!---------        DIALOG END  ------------>
+    </main>
+
+    <!---------        FOOTER    ------------>
+
+    <footer>
+      <div class="footer-bottom">
+        <div class="footer-text-TM">© Twelve Month</div>
+        <div class="footer-text-fotogram">Fotogram</div>
+      </div>
+    </footer>
+  </body>
+</html>

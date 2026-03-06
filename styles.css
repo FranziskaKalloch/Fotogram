@@ -1,0 +1,271 @@
+/* 
+-> Variablen definieren für Space und color 
+-> 5 Bilder probeweise in HTML einbauen und diese stylen, danach wird nur noch der style kopiert und in JS eingefügt.
+-> Header stylen
+-> Footer stylen
+-> Dialog:
+    -> Dialog::backdrop
+    -> Dialog in divs aufteilen
+    -> Dialog mit funktion verbinden
+
+
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /*----- COLORS ------*/
+
+  --primary-color: rgba(40, 43, 90);
+  --secondary-color: rgb(107, 110, 187);
+  --accent-color: rgba(123, 239, 229, 1);
+
+  /*----- SPACING ------*/
+
+  --space-xs: 8px;
+  --space-s: 16px;
+  --space-m: 120px;
+  --space-l: 160px;
+  --space-xl: 260px;
+}
+
+body {
+  font-family: "Miltonian Tattoo", serif;
+  background-color: var(--secondary-color);
+}
+
+/*----- HEADER ------*/
+
+.header-top {
+  background-color: var(--primary-color);
+}
+
+.header-logo {
+  width: auto;
+  height: 120px;
+  padding-left: var(--space-m);
+}
+
+/*----- HEADER END ------*/
+
+/*----- MAIN START ------*/
+
+h1 {
+  color: var(--accent-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-container {
+  margin: auto;
+
+  padding-inline: var(--space-m);
+  padding-top: var(--space-l);
+  padding-bottom: var(--space-l);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+/*----- IMAGE CONTAINER START ------*/
+
+#img-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gallery-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 12px;
+
+  object-fit: cover;
+  transition:
+    transform 1s ease-in,
+    box-shadow 0.35s ease;
+
+  /*ease-in starts slowly and accelerate*/
+}
+
+.gallery-img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 10px 25px rgba(250, 250, 250, 0.5);
+}
+
+/*----- DIALOG START------*/
+
+dialog {
+  position: fixed;
+  top: 20%;
+  left: 30%;
+
+  border: none;
+}
+
+dialog::backdrop {
+  background-color: rgba(40, 43, 90, 0.5);
+}
+
+.dialog[open] {
+  width: 550px;
+  height: 550px;
+  border-radius: 24px;
+
+  padding: 40px;
+
+  box-shadow:
+    6px 6px 6px white,
+    -6px -6px 6px var(--accent-color);
+
+  background-color: var(--primary-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#dialogHeader {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#dialogHeader button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.close-btn {
+  height: 32px;
+  width: 32px;
+}
+
+#dialogPicture {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  height: 400px;
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.arrow-left {
+  transform: rotate(180deg);
+  width: 32px;
+  height: 32px;
+}
+
+#counter {
+  color: white;
+}
+
+.arrow-right {
+  width: 32px;
+  height: 32px;
+}
+
+/*----- DIALOG ENDE------*/
+
+/*----- FOOTER START------*/
+
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+
+  padding-top: var(--space-s);
+  padding-bottom: var(--space-s);
+
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.footer-text-TM {
+  color: white;
+  font-size: 20px;
+}
+
+.footer-text-fotogram {
+  color: var(--accent-color);
+  font-size: 40px;
+}
+
+/* ----- RESPONSIVE DESIGN.  
+
+
+
+*/
+
+@media (max-width: 768px) {
+  .header-logo {
+    padding-left: var(--space-s);
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #img-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .dialog[open] {
+    max-width: none;
+    max-height: none;
+
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    margin: 0;
+
+    box-shadow: none;
+  }
+
+  #dialogHeader {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+  }
+
+  .img {
+    width: 550px;
+    height: 500px;
+    object-fit: cover;
+  }
+}
