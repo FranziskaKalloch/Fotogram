@@ -12,6 +12,10 @@
 // -> Der Bereich sollte mit CSS entsprechend gestylt werden.
 // -> for-Schleife erstellen
 
+// Event Bubbling:
+// -> function eventBubbling() {
+// event.stopPropagation()}
+
 const basePath = "assets/img/romy/";
 
 const twelveMonthImg = [
@@ -101,4 +105,11 @@ function prevImage() {
   }
 
   renderDialog();
+}
+
+function closeDialogOutsite(event) {
+  const closeOutside = document.getElementById("imgDialog");
+  if (event.target === closeOutside) {
+    closeOutside.close();
+  }
 }
