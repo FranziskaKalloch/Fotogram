@@ -59,6 +59,9 @@ function openDialog(index) {
 
 function closeDialog() {
   dialogRef.close();
+}
+
+function stopMyPropagation(event) {
   event.stopPropagation();
 }
 
@@ -90,11 +93,4 @@ function prevImage() {
   }
 
   renderDialog();
-}
-
-function closeDialogOutsite(event) {
-  const closeOutside = document.getElementById("imgDialog");
-  if (event.target === closeOutside) {
-    closeOutside.close();
-  }
 }

@@ -106,10 +106,7 @@ h1 {
 /*----- DIALOG START------*/
 
 dialog {
-  position: fixed;
-  top: 20%;
-  left: 30%;
-
+  margin: auto; /*----- dadurch, dass wir dem ganzen Dokument box sizing: border-box gegeben haben, klebt der Dialog zunächst oben links in der Ecke. Mit magin:auto zentrieren wir den Dialog wieder ------*/
   border: none;
 }
 

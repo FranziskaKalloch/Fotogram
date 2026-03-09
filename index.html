@@ -21,7 +21,7 @@
     />
   </head>
   <!---------    Wenn der Body geladen wird, dann greift die Funktion init(); Dafür ist das Attribut onload wichitg. Das ist der Start  ------------>
-  <body onload="init()" onclick="closeDialogOutsite(event)">
+  <body onload="init()">
     <!---------        HEADER   ------------>
     <header class="header-top">
       <div class="header-logo-container">
@@ -52,42 +52,46 @@
         class="dialog"
         tabindex="-1"
         aria-labelledby="fileName"
+        onclick="closeDialog()"
       >
-        <header id="dialogHeader">
-          <h2 id="fileName"></h2>
-          <button onclick="closeDialog()" aria-label="close Dialog">
-            <img
-              class="close-btn"
-              src="assets/icons/icons8-fenster-schließen-100.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </button>
-        </header>
-        <section id="dialogPicture"></section>
-        <footer class="dialog-footer" onclick="event.stopPropagation()">
-          <button
-            id="dialogArrowLeft"
-            onclick="prevImage()"
-            aria-label="previous picture"
-          >
-            <img
-              class="arrow-left"
-              src="assets/icons/icons8-pfeil-64.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </button>
-          <span id="counter" aria-live="polite" aria-atomic="true"></span>
-          <button
-            id="dialogArrowRight"
-            onclick="nextImage()"
-            aria-label="next picture"
-          >
-            <img class="arrow-right" src="assets/icons/icons8-pfeil-64.png" />
-          </button>
-        </footer>
+        <div onclick="event.stopPropagation()">
+          <header id="dialogHeader">
+            <h2 id="fileName"></h2>
+            <button onclick="closeDialog()">
+              <img
+                class="close-btn"
+                src="assets/icons/icons8-fenster-schließen-100.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+          </header>
+          <section id="dialogPicture"></section>
+          <footer class="dialog-footer">
+            <button
+              id="dialogArrowLeft"
+              onclick="prevImage()"
+              aria-label="previous picture"
+            >
+              <img
+                class="arrow-left"
+                src="assets/icons/icons8-pfeil-64.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+            <span id="counter" aria-live="polite" aria-atomic="true"></span>
+            <button
+              id="dialogArrowRight"
+              onclick="nextImage()"
+              aria-label="next picture"
+            >
+              <img class="arrow-right" src="assets/icons/icons8-pfeil-64.png" />
+            </button>
+          </footer>
+        </div>
       </dialog>
+
       <!---------        DIALOG END  ------------>
     </main>
 
