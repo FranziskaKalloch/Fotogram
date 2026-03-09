@@ -17,19 +17,19 @@
 const basePath = "assets/img/romy/";
 
 const twelveMonthImg = [
-  "Geburt.jpg",
-  "1-Monat.jpg",
-  "2-Monate.jpg",
-  "3-Monate.jpg",
-  "4-Monate.jpg",
-  "5-Monate.jpg",
-  "6-Monate.jpg",
-  "7-Monate.jpg",
-  "8-Monate.jpg",
-  "9-Monate.jpg",
-  "10-Monate.jpg",
-  "11-Monate.jpg",
-  "1-Jahr.jpg",
+  "Geburt.jpeg",
+  "1-Monat.jpeg",
+  "2-Monate.jpeg",
+  "3-Monate.jpeg",
+  "4-Monate.jpeg",
+  "5-Monate.jpeg",
+  "6-Monate.jpeg",
+  "7-Monate.jpeg",
+  "8-Monate.jpeg",
+  "9-Monate.jpeg",
+  "10-Monate.jpeg",
+  "11-Monate.jpeg",
+  "1-Jahr.jpeg",
 ];
 
 let currentIndex = 0;
