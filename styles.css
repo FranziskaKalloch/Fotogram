@@ -36,6 +36,9 @@
 body {
   font-family: "Miltonian Tattoo", serif;
   background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column; /*--- Dadurch, dass der body jetzt eine Flexbox ist, können wir dem main-Bereich sagen, dass er wachsen soll  */
+  min-height: 100dvh; /*  dynamicViewHeight - dem Body muss auch eine min-height mitgegeben werden, damit der body sich ausdehnen kann  */
 }
 
 /*----- HEADER ------*/
@@ -70,6 +73,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 100px;
+  flex: 1; /* Hiermit sagen wir dem Main-Bereich, dass er wachsen darf */
 }
 
 /*----- IMAGE CONTAINER START ------*/
@@ -115,7 +119,6 @@ dialog::backdrop {
 
 .dialog[open] {
   width: 550px;
-  height: 550px;
   border-radius: 24px;
 
   padding: 40px;
@@ -231,6 +234,10 @@ dialog::backdrop {
     text-align: center;
   }
 
+  .main-container {
+    margin: 0;
+  }
+
   #img-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -260,12 +267,5 @@ dialog::backdrop {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 75%;
-  }
-
-  .img {
-    width: 550px;
-    height: 500px;
-    object-fit: cover;
   }
 }

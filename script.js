@@ -12,9 +12,7 @@
 // -> Der Bereich sollte mit CSS entsprechend gestylt werden.
 // -> for-Schleife erstellen
 
-// Event Bubbling:
-// -> function eventBubbling() {
-// event.stopPropagation()}
+// DIalog außerhalb des Dialogfensters schließen
 
 const basePath = "assets/img/romy/";
 
@@ -36,9 +34,7 @@ const twelveMonthImg = [
 
 let currentIndex = 0;
 
-for (let image of twelveMonthImg) {
-  console.log(image);
-}
+const dialogRef = document.getElementById("imgDialog");
 
 function init() {
   render();
@@ -55,25 +51,16 @@ function render() {
   }
 }
 
-// OPEN DIALOG
-
 function openDialog(index) {
   currentIndex = index;
-  console.log("openDialog index:", index);
-  const dialogRef = document.getElementById("imgDialog");
-  dialogRef.showModal();
-
   renderDialog();
+  dialogRef.showModal();
 }
-
-// CLOSE DIALOG
 
 function closeDialog() {
-  const dialogRef = document.getElementById("imgDialog");
   dialogRef.close();
+  event.stopPropagation();
 }
-
-// RENDER DIALOG
 
 function renderDialog() {
   const pictureRef = document.getElementById("dialogPicture");
@@ -87,8 +74,6 @@ function renderDialog() {
   counterRef.textContent = `${currentIndex + 1} / ${twelveMonthImg.length}`;
 }
 
-/// NEXT und PREV
-
 function nextImage() {
   currentIndex++;
   if (currentIndex >= twelveMonthImg.length) {
@@ -100,7 +85,7 @@ function nextImage() {
 
 function prevImage() {
   currentIndex--;
-  if (currentIndex <= twelveMonthImg.length) {
+  if (currentIndex <= 0) {
     currentIndex = 12;
   }
 

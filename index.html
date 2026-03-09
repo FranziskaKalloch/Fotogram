@@ -13,6 +13,12 @@
       href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="icon"
+      type="image/png"
+      size="32x32"
+      href="assets/icons/verfolgung.png"
+    />
   </head>
   <!---------    Wenn der Body geladen wird, dann greift die Funktion init(); Dafür ist das Attribut onload wichitg. Das ist der Start  ------------>
   <body onload="init()" onclick="closeDialogOutsite(event)">
@@ -59,7 +65,7 @@
           </button>
         </header>
         <section id="dialogPicture"></section>
-        <footer class="dialog-footer">
+        <footer class="dialog-footer" onclick="event.stopPropagation()">
           <button
             id="dialogArrowLeft"
             onclick="prevImage()"
