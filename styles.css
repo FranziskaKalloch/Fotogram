@@ -110,6 +110,10 @@ dialog {
   border: none;
 }
 
+.inner-dialog {
+  width: 100%;
+}
+
 dialog::backdrop {
   background-color: rgba(40, 43, 90, 0.5);
 }

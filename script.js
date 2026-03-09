@@ -89,8 +89,8 @@ function nextImage() {
 function prevImage() {
   currentIndex--;
   if (currentIndex <= 0) {
-    currentIndex = 12;
-  }
+    currentIndex = twelveMonthImg.length; // vorher stand dort 12 - Man sollte aber immer mit der Länge des Array's arbeiten! Also keine fixen Werte!
+  } // gerade wenn noch ein Bild hinzugefügt wird, ist es mit festen Zahlen ungünstig, da man manuell anpassen muss.
 
   renderDialog();
 }
