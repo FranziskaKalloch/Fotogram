@@ -1,20 +1,6 @@
-// Array mit den Bilder (CHECK = let twelveMonth =[];)
-// Funktion für Dialog öffnen erstellen
-// Funktion für Dialog schließen erstellen
-// Funktion in Dialog nach links und/oder rechts
-// Funktion zum Rendern für Dialoginhalt (dynmaisch)
-// init Funktion erstellen, die beim Start der App ausgeführt wird & die render Funktion aufruft.
-
-// Funktion für Rendern für Miniaturansicht (dynamisch)
-// -> Funtkion erstellen (CHECK)
-// -> Funktion muss aufgerufen werden.
-// -> Bereich in HTML anlegen <div id="img-container"> (CHECK) , wo die Bilder drin sind. Bilder aus dem Array.
-// -> Der Bereich sollte mit CSS entsprechend gestylt werden.
-// -> for-Schleife erstellen
-
-// DIalog außerhalb des Dialogfensters schließen
-
+let currentIndex = 0;
 const basePath = "assets/img/romy/";
+const dialogRef = document.getElementById("imgDialog");
 
 const twelveMonthImg = [
   "Geburt.jpeg",
@@ -31,10 +17,6 @@ const twelveMonthImg = [
   "11-Monate.jpeg",
   "1-Jahr.jpeg",
 ];
-
-let currentIndex = 0;
-
-const dialogRef = document.getElementById("imgDialog");
 
 function init() {
   render();
@@ -89,8 +71,8 @@ function nextImage() {
 function prevImage() {
   currentIndex--;
   if (currentIndex <= 0) {
-    currentIndex = twelveMonthImg.length; // vorher stand dort 12 - Man sollte aber immer mit der Länge des Array's arbeiten! Also keine fixen Werte!
-  } // gerade wenn noch ein Bild hinzugefügt wird, ist es mit festen Zahlen ungünstig, da man manuell anpassen muss.
+    currentIndex = twelveMonthImg.length;
+  }
 
   renderDialog();
 }
